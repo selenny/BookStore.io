@@ -1,0 +1,49 @@
+1. CREATE TABLE Book_Loans (
+Bookid INT IDENTITY (1,1) PRIMARY KEY NOT NULL,
+Branchid int,
+CardNo int,
+DateOut datetime NOT NULL DEFAULT GETDATE()
+);
+
+2. CREATE TABLE Book_Copies (
+Bookid int NOT NULL,
+Branchid int NOT NULL,
+No_Of_Copes int NOT NULL,
+PRIMARY KEY (Branchid)
+);
+
+3.CREATE TABLE Library_Branch (
+Branchid int NOT NULL,
+BranchName varchar(50) NOT NULL,
+Address varchar (125) NOT NULL,
+PRIMARY KEY (Branchid)
+);
+
+4. CREATE TABLE BORROWER (
+CardNo int NOT NULL,
+Name varchar(25) NOT NULL,
+Address varchar(125) NOT NULL,
+Phone int
+PRIMARY KEY (CardNo)
+);
+
+5. CREATE TABLE BOOK_AUTHORS (
+Bookid int NOT NULL,
+AuthorName varchar(125) NOT NULL,
+PRIMARY KEY (Bookid)
+);
+
+6. CREATE TABLE BOOK (
+Bookid int NOT NULL,
+Title varchar(155) NOT NULL,
+PublisherName varchar(135) NOT NULL,
+PRIMARY KEY (Bookid)
+);
+
+7. CREATE TABLE PUBLISHER (
+Name varchar(125) NOT NULL,
+Address varchar(225) NOT NULL,
+Phone varchar(25),
+PRIMARY KEY (Name)
+);
+
